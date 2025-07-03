@@ -1,0 +1,5 @@
+/Users/tdusserre/Documents/Mediation/Jeux/NimApp/build/CMakeFiles/NimNN.dir
+/Users/tdusserre/Documents/Mediation/Jeux/NimApp/build/CMakeFiles/edit_cache.dir
+/Users/tdusserre/Documents/Mediation/Jeux/NimApp/build/CMakeFiles/rebuild_cache.dir
+/Users/tdusserre/Documents/Mediation/Jeux/NimApp/build/CMakeFiles/NimNN_autogen_timestamp_deps.dir
+/Users/tdusserre/Documents/Mediation/Jeux/NimApp/build/CMakeFiles/NimNN_autogen.dir

@@ -1,0 +1,38 @@
+cmake_minimum_required(VERSION 3.16)
+project(NimNN)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set (CMAKE_MACOSX_BUNDLE ON)
+set (CMAKE_AUTOMOC ON)
+
+find_package(Qt6 REQUIRED COMPONENTS 
+    Core 
+    Widgets 
+    Gui
+    )
+
+add_executable(NimNN 
+    MACOSX_BUNDLE
+    main.cpp
+    gamewindow.cpp
+    trainwindow.cpp
+    game.cpp
+    nn.cpp
+    train.cpp
+    utils.cpp
+    sampling.cpp
+    gui/gamewindow.h
+    gui/trainwindow.h
+    # headers/game.h
+    # headers/nn.h
+    # headers/train.h
+    # headers/utils.h
+    )
+
+target_link_libraries(NimNN
+    PRIVATE 
+    Qt6::Core 
+    Qt6::Gui 
+    Qt6::Widgets
+)
