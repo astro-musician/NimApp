@@ -17,7 +17,6 @@ jobs:
           with:
                 version: 6.7.0
                 host: windows
-                modules: qttools
                 
         - name: Configure project
           run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
