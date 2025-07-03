@@ -16,7 +16,8 @@ jobs:
           uses : jurplel/install-qt-action@v4
           with:
                 version: 6.7.0
-                modules: qtbase qtwidgets
+                host: windows
+                modules: qttools
                 
         - name: Configure project
           run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
