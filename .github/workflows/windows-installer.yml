@@ -15,9 +15,10 @@ jobs:
         - name : Install Qt
           uses : jurplel/install-qt-action@v4
           with:
-                version: 6.7.0
+                version: 6.6.1
                 host: windows
                 modules: 'qttools'
+                cache: true
                 
         - name: Configure project
           run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
