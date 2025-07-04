@@ -1,5 +1,7 @@
 nn_saves/*
 .vscode/*
 build/*
+dmg-root/*
 create-dmg.sh
-test*
+test
+test.cpp
