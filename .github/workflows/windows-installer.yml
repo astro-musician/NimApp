@@ -15,7 +15,7 @@ jobs:
         - name: List available Qt modules
           run: |
             pip install aqtinstall
-            python -m aqt list-qt windows desktop --modules 6.7.0
+            python -m aqt list-qt windows desktop --modules 6.7.0 win64_msvc2019_64
           
         - name : Install Qt
           uses : jurplel/install-qt-action@v4
