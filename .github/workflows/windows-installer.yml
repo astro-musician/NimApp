@@ -17,12 +17,16 @@ jobs:
           with:
                 version: 6.7.0
                 host: windows
+                modules: 'qttools'
                 
         - name: Configure project
           run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
           
         - name: Build project
           run: cmake --build build --config Release
+          
+        - name: Deplay Qt DLLs
+          run: windeployqt build/Release/NimNN.exe
           
         - name: Install NSIS
           run: choco install nsis -y
