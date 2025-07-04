@@ -25,6 +25,9 @@ jobs:
                 tools: tools_qtcreator
                 cache: true
                 
+        - name: Check windeployqt
+          run: where windeployqt
+                
         - name: Configure project
           run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
           
