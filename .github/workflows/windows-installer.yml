@@ -12,12 +12,15 @@ jobs:
         - name : Checkout repo
           uses : actions/checkout@v4
           
+        - name: List available Qt modules
+          run: aqt list-qt windows desktop --modules 6.7.0 <arch>
+          
         - name : Install Qt
           uses : jurplel/install-qt-action@v4
           with:
-                version: 6.6.1
+                version: 6.7.0
                 host: windows
-                modules: 'qttools'
+                modules: qttools
                 cache: true
                 
         - name: Configure project
