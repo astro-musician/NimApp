@@ -46,6 +46,7 @@ class GameWindow : public QMainWindow {
         void start_game();
         void reset_game();
         void show_sticks_left();
+        void translateUi();
 
     signals:
         void close_game_window();

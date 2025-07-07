@@ -201,3 +201,5 @@ void GameWindow::closeEvent(QCloseEvent * event) {
     emit close_game_window();
     QMainWindow::closeEvent(event);
 };
+
+void GameWindow::translateUi() {};

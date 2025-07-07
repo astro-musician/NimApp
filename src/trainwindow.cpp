@@ -119,3 +119,11 @@ void TrainWindow::enable_buttons() {
     train_button->setEnabled(true);
     game_button->setEnabled(true);
 };
+
+void TrainWindow::translateUi() {
+    total_sticks_label->setText(tr("Total number of sticks"));
+    max_sticks_label->setText(tr("Maximum number of sticks"));
+    trains_label->setText(tr("Trains"));
+    train_button->setText(tr("Train"));
+    game_button->setText(tr("Play against NN"));
+};

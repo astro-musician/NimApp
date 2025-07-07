@@ -13,6 +13,8 @@ int main(int argc, char *argv[]) {
     QApplication app(argc,argv);
     QTranslator translator;
 
+    // Traductions sous Windows
+
     QString qmPath = QCoreApplication::applicationDirPath()+"/translations";
     qDebug() << "Chemin utilisé : " << qmPath;
 
@@ -22,10 +24,22 @@ int main(int argc, char *argv[]) {
     if (translator_loaded) {
         app.installTranslator(&translator);
     }
-    else {};
+    else {
+
+        // Traductions sous MacOS
+
+        qmPath = QCoreApplication::applicationDirPath()+"/../Resources/translations";
+        translator_loaded = translator.load(qmPath+"/fr.qm");
+
+        if (translator_loaded) {
+            app.installTranslator(&translator);
+        }
+        else {};
+
+    };
 
     TrainWindow window;
-    window.resize(500,500);
+    window.resize(600,500);
     window.show();
     return app.exec();
 }

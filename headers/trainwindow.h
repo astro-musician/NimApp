@@ -46,6 +46,7 @@ class TrainWindow : public QMainWindow {
 
     public slots:
         void enable_buttons();
+        void translateUi();
 
 };
 

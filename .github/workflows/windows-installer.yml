@@ -37,6 +37,7 @@ jobs:
           run: |
             mkdir dist
             copy build\Release\*.exe dist\
+            copy translations\*.qm dist\
             windeployqt dist\NimNN.exe
           
         - name: Install NSIS

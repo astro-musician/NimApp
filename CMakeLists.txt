@@ -5,6 +5,15 @@ set(CMAKE_CXX_STANDARD 17)
 
 set (CMAKE_MACOSX_BUNDLE ON)
 set (CMAKE_AUTOMOC ON)
+set (MACOSX_BUNDLE_ICON_FILE NimNN)
+
+if(MACOSX_BUNDLE)
+    set_source_files_properties(
+        ${CMAKE_SOURCE_DIR}/NimNN.icns
+        PROPERTIES
+        MACOSX_PACKAGE_LOCATION Resources
+    )
+endif()
 
 find_package(Qt6 REQUIRED COMPONENTS 
     Core 
@@ -13,7 +22,15 @@ find_package(Qt6 REQUIRED COMPONENTS
     )
 
 file(GLOB TS_FILES translations/*.ts)
-# qt_add_translations(NimNN TS_FILES ${TS_FILES})
+
+if(WIN32)
+    set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_SOURCE_DIR}/icon.rc")
+    target_sources(NimNN PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
+endif()
+
+if(MACOSX_BUNDLE)
+    target_sources(NimNN PRIVATE ${CMAKE_SOURCE_DIR}/NimNN.icns)
+endif()
 
 add_executable(NimNN 
     MACOSX_BUNDLE
