@@ -24,15 +24,15 @@ TrainWindow::TrainWindow(QWidget *parent) : QMainWindow(parent) {
 
     total_sticks_slider = new QSlider(this);
     lcd_total_sticks = new QLCDNumber(this);
-    total_sticks_label = new QLabel("Total number of sticks",this);
+    total_sticks_label = new QLabel(tr("Total number of sticks"),this);
     max_sticks_slider = new QSlider(this);
     lcd_max_sticks = new QLCDNumber(this);
-    max_sticks_label = new QLabel("Maximum number of sticks",this);
+    max_sticks_label = new QLabel(tr("Maximum number of sticks"),this);
     trains_slider = new QSlider(this);
     lcd_trains = new QLCDNumber(this);
-    trains_label = new QLabel("Trains",this);
-    train_button = new QPushButton("Train",this);
-    game_button = new QPushButton("Play against NN",this);
+    trains_label = new QLabel(tr("Trains"),this);
+    train_button = new QPushButton(tr("Train"),this);
+    game_button = new QPushButton(tr("Play against NN"),this);
 
     total_sticks_label->setFont(labelfont);
     max_sticks_label->setFont(labelfont);
@@ -112,6 +112,7 @@ void TrainWindow::start_game() {
     gamewindow->init_game();
     gamewindow->resize(500,500);
     gamewindow->show();
+    connect(gamewindow,&GameWindow::close_game_window,this,&TrainWindow::enable_buttons);
 };
 
 void TrainWindow::enable_buttons() {

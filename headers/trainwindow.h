@@ -12,6 +12,7 @@ class QLabel;
 class QSlider;
 class QLCDNumber;
 class QString;
+class GameWindow;
 
 class TrainWindow : public QMainWindow {
     Q_OBJECT

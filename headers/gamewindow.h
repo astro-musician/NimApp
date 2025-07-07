@@ -32,6 +32,7 @@ class GameWindow : public QMainWindow {
         QPushButton *play_button;
         QPushButton *start_button;
         QLCDNumber *sticks_number_LCD;
+        QLCDNumber *played_sticks_LCD;
         QLabel *game_state;
         QLabel *selected_sticks;
         QSlider *selected_sticks_slider;
@@ -45,6 +46,12 @@ class GameWindow : public QMainWindow {
         void start_game();
         void reset_game();
         void show_sticks_left();
+
+    signals:
+        void close_game_window();
+    
+    public:
+        void closeEvent(QCloseEvent *event) override;
 
 };
 

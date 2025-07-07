@@ -6,7 +6,7 @@
 # include "../headers/utils.h"
 
 QString getAppDataPath() {
-        QString appDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)+"/NimApp";
+        QString appDataDir = QStandardPaths::writableLocation(QStandardPaths::AppDataLocation)+"/NimNN";
 
         QDir dir(appDataDir);
         if (!dir.exists()) {

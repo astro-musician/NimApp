@@ -12,6 +12,9 @@ find_package(Qt6 REQUIRED COMPONENTS
     Gui
     )
 
+file(GLOB TS_FILES translations/*.ts)
+# qt_add_translations(NimNN TS_FILES ${TS_FILES})
+
 add_executable(NimNN 
     MACOSX_BUNDLE
     WIN32
