@@ -6,6 +6,12 @@ Page instfiles
 
 Section "Install"
     SetOutPath $INSTDIR
-    File "build\Release\NimNN.exe"
+    File /r "dist\*.*"
     CreateShortCut "$DESKTOP\NimNN.lnk" "$INSTDIR\NimNN.exe"
+SectionEnd
+
+Section "Uninstall"
+    Delete $INSTDIR\NImNN.exe
+    Delete $DESKTOP\NimNN.lnk
+    RMDir /r "$INSTDIR"
 SectionEnd
