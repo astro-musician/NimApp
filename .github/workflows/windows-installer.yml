@@ -15,27 +15,29 @@ jobs:
         - name: List available Qt modules
           run: |
             pip install aqtinstall
-            python -m aqt list-qt windows desktop --modules 6.6.0 win64_msvc2022_64
+            python -m aqt install-qt windows desktop 6.5.3 win64_msvc2019_64
           
         - name : Install Qt
           uses : jurplel/install-qt-action@v4
           with:
-                version: 6.6.0
+                version: 6.5.3
                 arch: win64_msvc2019_64
-                tools: tools_qtcreator
                 cache: true
                 
         - name: Check windeployqt
           run: where windeployqt
                 
         - name: Configure project
-          run: cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
+          run: cmake -B build -DCMAKE_PREFIX_PATH="%Qt6_DIR%" -DCMAKE_BUILD_TYPE=Release
           
         - name: Build project
           run: cmake --build build --config Release
           
         - name: Deploy Qt DLLs
-          run: windeployqt build/Release/NimNN.exe
+          run: |
+            mkdir dist
+            copy build\Release\*.exe dist\
+            windeployqt dist\NimNN.exe
           
         - name: Install NSIS
           run: choco install nsis -y

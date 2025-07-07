@@ -14,7 +14,7 @@ find_package(Qt6 REQUIRED COMPONENTS
 
 add_executable(NimNN 
     MACOSX_BUNDLE
-    # WIN32
+    WIN32
     src/main.cpp
     src/gamewindow.cpp
     src/trainwindow.cpp
