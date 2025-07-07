@@ -15,12 +15,12 @@ jobs:
         - name: List available Qt modules
           run: |
             pip install aqtinstall
-            python -m aqt list-qt windows desktop --modules 6.7.0 win64_msvc2019_64
+            python -m aqt list-qt windows desktop --modules 6.6.0 win64_msvc2019_64
           
         - name : Install Qt
           uses : jurplel/install-qt-action@v4
           with:
-                version: 6.7.0
+                version: 6.6.0
                 arch: win64_msvc2019_64
                 tools: tools_qtcreator
                 cache: true
@@ -34,7 +34,7 @@ jobs:
         - name: Build project
           run: cmake --build build --config Release
           
-        - name: Deplay Qt DLLs
+        - name: Deploy Qt DLLs
           run: windeployqt build/Release/NimNN.exe
           
         - name: Install NSIS

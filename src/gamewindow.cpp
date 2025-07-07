@@ -28,16 +28,20 @@ GameWindow::GameWindow(QWidget *parent) : QMainWindow(parent) {
     play_button = new QPushButton("Play",this);
     game_state = new QLabel("",this);
     selected_sticks_slider = new QSlider();
+    selected_sticks = new QLabel("Sticks to remove",this);
 
     game_state->setFont(gamefont);
+    selected_sticks->setFont(gamefont);
     start_button->setFont(gamefont);
     play_button->setFont(gamefont);
 
     selected_sticks_slider->setMinimum(1);
     selected_sticks_slider->setTickInterval(1);
     selected_sticks_slider->setValue(gamewindow::n_played);
+    selected_sticks_slider->setTickPosition(QSlider::TicksBothSides);
 
     layout->addWidget(selected_sticks_slider,0,0);
+    layout->addWidget(selected_sticks,1,0);
     layout->addWidget(sticks_number_LCD,0,1);
     layout->addWidget(start_button,2,1);
     layout->addWidget(play_button,3,1);

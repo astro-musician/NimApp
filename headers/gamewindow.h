@@ -33,6 +33,7 @@ class GameWindow : public QMainWindow {
         QPushButton *start_button;
         QLCDNumber *sticks_number_LCD;
         QLabel *game_state;
+        QLabel *selected_sticks;
         QSlider *selected_sticks_slider;
         NimNN *trained_NN;
         Nim_game *game;
