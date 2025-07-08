@@ -36,8 +36,9 @@ jobs:
         - name: Deploy Qt DLLs
           run: |
             mkdir dist
+            mkdir dist\translations
             copy build\Release\*.exe dist\
-            copy translations\*.qm dist\
+            copy translations\*.qm dist\translations
             windeployqt dist\NimNN.exe
           
         - name: Install NSIS
