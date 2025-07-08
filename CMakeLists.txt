@@ -25,7 +25,6 @@ file(GLOB TS_FILES translations/*.ts)
 
 if(WIN32)
     set(APP_ICON_RESOURCE_WINDOWS "${CMAKE_SOURCE_DIR}/src/icon.rc")
-    target_sources(NimNN PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
 endif()
 
 if(MACOSX_BUNDLE)
@@ -50,6 +49,10 @@ add_executable(NimNN
     # headers/train.h
     # headers/utils.h
     )
+
+if(WIN32)
+    target_sources(NimNN PRIVATE ${APP_ICON_RESOURCE_WINDOWS})
+endif()
 
 target_link_libraries(NimNN
     PRIVATE 
